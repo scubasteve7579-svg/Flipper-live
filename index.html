@@ -1,0 +1,45 @@
+cd ~/Desktop/flipper_Simulation
+
+cat > index.html << 'EOF'
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flipper LIVE — AI eBay + Amazon Flipping</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin: 50px; background: #f8f9fa; }
+    h1 { color: #007bff; }
+    p { font-size: 18px; color: #666; }
+    button { padding: 15px 30px; font-size: 18px; border: none; border-radius: 5px; cursor: pointer; margin: 10px; }
+    .scan { background: #28a745; color: white; }
+    .amazon { background: #ff9900; color: black; }
+    .ebay { background: #007bff; color: white; }
+    #result { margin-top: 20px; font-size: 20px; padding: 20px; background: white; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Flipper — AI Profit Flipping</h1>
+  <p>Scan → AI finds profit → Buy on eBay or Amazon | EPN ID: 5339126153</p>
+
+  <button onclick="testScan()" class="scan">SCAN BARCODE (Demo)</button><br>
+  <button onclick="window.open('https://amazon.flipper.website', '_blank')" class="amazon">GO TO AMAZON AFFILIATE</button>
+
+  <div id="result">Ready to flip...</div>
+
+  <script>
+  function testScan() {
+    document.getElementById('result').innerHTML = `
+      <b>Scanned: TEST123456</b><br>
+      <b>Amazon Cost: $12.99</b> → <b>eBay Sell: $28.50</b><br>
+      <b>Profit: $15.51 (119% ROI)</b><br><br>
+      <a href="https://www.ebay.com/sch/i.html?_nkw=test+product&_trkparms=aid%3D5339126153" target="_blank">
+        <button class="ebay">BUY NOW ON EBAY (EPN)</button>
+      </a>
+      <a href="https://amazon.flipper.website" target="_blank">
+        <button class="amazon">BUY ON AMAZON</button>
+      </a>
+    `;
+  }
+  </script>
+</body>
+</html>
+EOF
